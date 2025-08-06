@@ -1,4 +1,5 @@
-//https://codeforces.com/edu/course/2/lesson/9/2/practice/contest/307093/problem/F
+//https://codeforces.com/contest/279/problem/B
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -51,27 +52,20 @@ int32_t main() {
 	int t=1;//cin>>t;
 	while(t--){
 	    int n,s;cin>>n>>s;
-	   /// s--;//answer of this q= total_no_of_subarrays- (no of seg with sum <=s-1)
-	    // 
 	    vector<int>a(n);
 	 input(a);
 	 int l=0,r=0;
-	 map<int,int>f;
-	 
 	 int sum=0;int ans=0;
 	 while(r<n){
-	     f[a[r]]++;
-	     //sum+=a[r];
-	     while(((f.rbegin()->first) -(f.begin()->first))>s){
-	         f[a[l]]--;
-	         if(f[a[l]]==0)f.erase(a[l]);
-	         //sum-=a[l];
+	     sum+=a[r];
+	     while(sum>s){
+	         sum-=a[l];
 	         l++;
 	     }
-	     if(f.rbegin()->first -f.begin()->first<=s){
+	     if(sum<=s){
 	         //if(r>=l)
 	         int len=r-l+1;
-	         ans+= max(0ll,len);
+	         ans=max(ans,len);
 	         
 	     }
 	     r++;
