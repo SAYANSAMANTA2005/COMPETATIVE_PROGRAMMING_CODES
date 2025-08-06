@@ -1,3 +1,5 @@
+//https://codeforces.com/edu/course/2/lesson/9/2/practice/contest/307093/problem/C
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -110,4 +112,5 @@ ll mod_div(ll a, ll b, ll m) {// m-->prime
     a = a % m; b = b % m; 
     return (mod_mul(a, inverse(b, m), m) + m) % m;
 }
+
 */
